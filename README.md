@@ -79,26 +79,32 @@ This reduces:
 
 ⸻
 
-📁 Project Structure
+## 📁 Project Structure
 
-.
-├── app.py                  # Main Streamlit entry point
-├── evaluator.py            # AI evaluation logic
-├── prompts.py              # Prompt engineering for Gemini
-├── data/
-│   ├── init.py
-│   └── question_bank.py    # Interview & DSA question bank
-├── modes/
-│   ├── interview_mode.py   # Interview Practice logic
-│   ├── coding_mode.py      # Coding Practice logic
-│   └── doubt_mode.py       # Doubt Solver logic
-├── ui/
-│   ├── chat.py             # Chat UI components
-│   ├── sidebar.py          # Sidebar layout & controls
-│   └── styles.py           # Custom CSS styling
-├── Requirements.txt
+```text
+Praxis/
+│
+├── app.py                 # Main Streamlit entry point
+├── evaluator.py           # AI evaluation logic
+├── prompts.py             # Prompt templates for Gemini
+├── requirements.txt
 ├── README.md
-└── .env (not pushed to GitHub)
+├── .gitignore
+│
+├── data/
+│   ├── __init__.py
+│   └── question_bank.py   # Interview & DSA questions
+│
+├── modes/
+│   ├── interview_mode.py  # Interview Practice logic
+│   ├── coding_mode.py     # Coding Practice logic
+│   └── doubt_mode.py      # Doubt Solver logic
+│
+└── ui/
+    ├── chat.py            # Chat UI components
+    ├── sidebar.py         # Sidebar layout & controls
+    └── styles.py          # Custom CSS styling
+```
 
 ⸻
 
