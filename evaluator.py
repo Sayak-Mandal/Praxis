@@ -1,11 +1,21 @@
 import os
+import streamlit as st
 import google.generativeai as genai
 import re
 
 from dotenv import load_dotenv
 load_dotenv()
 
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+# Try to get the API key from environment variables first (local), 
+# then fallback to Streamlit secrets (deployment)
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    except Exception as e:
+        print("Warning: GEMINI_API_KEY not found in environment or secrets.")
+
+genai.configure(api_key=api_key)
 
 def extract_score(text):
     """
